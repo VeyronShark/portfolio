@@ -1,35 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import Hero from './components/Hero';
+import About from './components/About';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import data from './data.json';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <Hero data={data.hero} />
+      <About data={data.about} />
+      <Skills data={data.skills} />
+      <Projects data={data.projects} />
+      
+      <footer style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-secondary)', marginTop: '4rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <p>© {new Date().getFullYear()} {data.hero.name}. All rights reserved.</p>
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;

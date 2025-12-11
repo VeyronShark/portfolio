@@ -1,0 +1,59 @@
+{
+  "hero": {
+    "name": "Varun Satapathy",
+    "roles": ["Web Developer", "Game Developer", "Programmer"],
+    "bio": "Crafting digital realms where logic meets creativity. I build immersive games and high-performance web applications.",
+    "photo": "https://placehold.co/400x400/2a2a2a/ffffff?text=VS"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Hello! I'm Varun, a multidisciplinary developer who thrives at the intersection of game development and web engineering. With a passion for clean code and compelling user experiences, I bridge the gap between interactive 3D worlds and responsive modern web interfaces. Whether it's optimizing a rendering pipeline or architecting a scalable frontend, I love the challenge of bringing ideas to life."
+  },
+  "skills": {
+    "game": ["Unity 3D", "C#", "Unreal Engine", "HLSL/GLSL", "Physics Games"],
+    "web": ["React.js", "JavaScript (ES6+)", "Three.js", "Node.js", "WebGL"],
+    "other": ["Git & Version Control", "Python", "Algorithm Design", "CI/CD Pipelines"]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Neon Horizon",
+      "category": "game",
+      "image": "https://placehold.co/600x400/111/00ffcc?text=Neon+Horizon",
+      "description": "A high-speed cyberpunk racer built in Unity with custom shader effects.",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "title": "E-Commerce Dashboard",
+      "category": "web",
+      "image": "https://placehold.co/600x400/111/3399ff?text=Dashboard",
+      "description": "A comprehensive analytics dashboard using React and D3.js.",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "title": "Automation Suite",
+      "category": "other",
+      "image": "https://placehold.co/600x400/111/ff3366?text=Auto+Scripts",
+      "description": "Python scripts for automating daily development workflows.",
+      "link": "#"
+    },
+    {
+      "id": 4,
+      "title": "Voxel World",
+      "category": "game",
+      "image": "https://placehold.co/600x400/111/ccff00?text=Voxel+World",
+      "description": "A procedural terrain generation experiment utilizing perlin noise.",
+      "link": "#"
+    },
+    {
+      "id": 5,
+      "title": "Modern Portfolio",
+      "category": "web",
+      "image": "https://placehold.co/600x400/111/ffffff?text=Portfolio",
+      "description": "Minimalist portfolio template with dark mode support.",
+      "link": "#"
+    }
+  ]
+}
