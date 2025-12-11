@@ -7,14 +7,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Skills = ({ data }) => {
   const container = useRef();
-  const gridRef = useRef();
+  const marqueeRef = useRef();
 
   useGSAP(() => {
-    gsap.from(".skill-title-anim", {
+    // Reveal animation
+    gsap.from(".skills-title", {
       scrollTrigger: {
         trigger: container.current,
         start: "top 80%",
-        toggleActions: "play none none reverse"
       },
       y: 50,
       opacity: 0,
@@ -22,39 +22,39 @@ const Skills = ({ data }) => {
       ease: "power3.out"
     });
 
-    gsap.from(".skill-card", {
-      scrollTrigger: {
-        trigger: gridRef.current, // Use ref instead of class string
-        start: "top 85%",
-        toggleActions: "play none none reverse"
-      },
-      y: 50,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.1, // Faster stagger
-      ease: "power2.out"
+    // Infinite Marquee
+    const tl = gsap.timeline({ repeat: -1 });
+    tl.to(marqueeRef.current, {
+      xPercent: -50,
+      duration: 20,
+      ease: "none",
     });
+
   }, { scope: container });
 
+  // Flatten all skills into a single array for the marquee
+  const allSkills = Object.values(data).flat();
+
   return (
-    <section ref={container} className="py-32">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="skill-title-anim text-5xl font-extrabold mb-16 text-center bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent tracking-tight w-full">
-          Skills
-        </h2>
-        <div ref={gridRef} className="skill-grid-anim grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {Object.entries(data).map(([category, skills]) => (
-            <div key={category} className="skill-card bg-surface p-8 rounded-xl border border-white/5 transition duration-300 hover:-translate-y-1 hover:border-primary/30 h-full shadow-lg hover:shadow-xl">
-              <h3 className="text-xl mb-6 text-white pb-2 block border-b border-white/10 font-bold capitalize">
-                {category}
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {skills.map((skill, index) => (
-                  <span key={index} className="bg-white/5 px-3 py-2 rounded-md text-sm text-gray-400 border border-transparent transition duration-200 hover:bg-primary/10 hover:text-primary hover:border-primary/20">
-                    {skill}
-                  </span>
-                ))}
-              </div>
+    <section ref={container} className="py-40 overflow-hidden relative border-b border-white/5">
+      <div className="px-6 md:px-24 mb-16">
+        <h2 className="skills-title text-base text-secondary uppercase tracking-widest font-medium mb-4">Core Competencies</h2>
+      </div>
+
+      <div className="relative flex overflow-hidden whitespace-nowrap py-10">
+        <div ref={marqueeRef} className="flex gap-16 items-center">
+          {/* Duplicate list for infinite effect - 4 sets to be safe */}
+          {[...Array(4)].map((_, setIndex) => (
+            <div key={setIndex} className="flex gap-16 items-center">
+              {allSkills.map((skill, index) => (
+                <span 
+                  key={`${setIndex}-${index}`} 
+                  className="text-6xl md:text-8xl font-display font-bold uppercase text-transparent stroke-text opacity-50 hover:opacity-100 transition-opacity duration-300"
+                  style={{ WebkitTextStroke: '2px rgba(255,255,255,0.2)' }}
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
           ))}
         </div>
