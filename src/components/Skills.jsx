@@ -1,24 +1,62 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Skills = ({ data }) => {
+  const container = useRef();
+
+  useGSAP(() => {
+    gsap.from(".skill-title-anim", {
+      scrollTrigger: {
+        trigger: container.current,
+        start: "top 80%",
+        toggleActions: "play none none reverse"
+      },
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out"
+    });
+
+    gsap.from(".skill-card", {
+      scrollTrigger: {
+        trigger: ".skill-grid-anim",
+        start: "top 85%",
+        toggleActions: "play none none reverse"
+      },
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+      ease: "power2.out"
+    });
+  }, { scope: container });
+
   return (
-    <section className="section container">
-      <h2 className="section-title">Skills</h2>
-      <div className="skills-grid">
-        {Object.entries(data).map(([category, skills]) => (
-          <div key={category} className="skill-category">
-            <h3 className="skill-title">
-              {category.charAt(0).toUpperCase() + category.slice(1)}
-            </h3>
-            <div className="skill-list">
-              {skills.map((skill, index) => (
-                <span key={index} className="skill-tag">
-                  {skill}
-                </span>
-              ))}
+    <section ref={container} className="py-32">
+      <div className="max-w-7xl mx-auto px-4">
+        <h2 className="skill-title-anim text-5xl font-extrabold mb-16 text-center bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent tracking-tight w-full">
+          Skills
+        </h2>
+        <div className="skill-grid-anim grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {Object.entries(data).map(([category, skills]) => (
+            <div key={category} className="skill-card bg-surface p-8 rounded-xl border border-white/5 transition duration-300 hover:-translate-y-1 hover:border-primary/30 h-full shadow-lg hover:shadow-xl">
+              <h3 className="text-xl mb-6 text-white pb-2 block border-b border-white/10 font-bold capitalize">
+                {category}
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {skills.map((skill, index) => (
+                  <span key={index} className="bg-white/5 px-3 py-2 rounded-md text-sm text-gray-400 border border-transparent transition duration-200 hover:bg-primary/10 hover:text-primary hover:border-primary/20">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

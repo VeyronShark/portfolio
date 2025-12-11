@@ -13,7 +13,7 @@ function App() {
       <Skills data={data.skills} />
       <Projects data={data.projects} />
       
-      <footer style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-secondary)', marginTop: '4rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+      <footer className="text-center p-8 text-gray-400 mt-16 border-t border-white/5">
         <p>© {new Date().getFullYear()} {data.hero.name}. All rights reserved.</p>
       </footer>
     </div>
