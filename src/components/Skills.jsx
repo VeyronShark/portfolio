@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Skills = ({ data }) => {
   const container = useRef();
+  const gridRef = useRef();
 
   useGSAP(() => {
     gsap.from(".skill-title-anim", {
@@ -23,14 +24,14 @@ const Skills = ({ data }) => {
 
     gsap.from(".skill-card", {
       scrollTrigger: {
-        trigger: ".skill-grid-anim",
+        trigger: gridRef.current, // Use ref instead of class string
         start: "top 85%",
         toggleActions: "play none none reverse"
       },
       y: 50,
       opacity: 0,
       duration: 0.8,
-      stagger: 0.2,
+      stagger: 0.1, // Faster stagger
       ease: "power2.out"
     });
   }, { scope: container });
@@ -41,7 +42,7 @@ const Skills = ({ data }) => {
         <h2 className="skill-title-anim text-5xl font-extrabold mb-16 text-center bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent tracking-tight w-full">
           Skills
         </h2>
-        <div className="skill-grid-anim grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={gridRef} className="skill-grid-anim grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {Object.entries(data).map(([category, skills]) => (
             <div key={category} className="skill-card bg-surface p-8 rounded-xl border border-white/5 transition duration-300 hover:-translate-y-1 hover:border-primary/30 h-full shadow-lg hover:shadow-xl">
               <h3 className="text-xl mb-6 text-white pb-2 block border-b border-white/10 font-bold capitalize">
