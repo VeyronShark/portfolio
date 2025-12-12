@@ -14,10 +14,9 @@ const Skills = ({ data }) => {
     gsap.from(".skill-category", {
       scrollTrigger: {
         trigger: container.current,
-        start: "top 75%",
+        start: "top 85%",
       },
       y: 50,
-      opacity: 0,
       duration: 0.8,
       stagger: 0.2,
       ease: "power3.out"
