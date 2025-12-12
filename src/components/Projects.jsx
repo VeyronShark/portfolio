@@ -29,11 +29,17 @@ const ProjectImageCarousel = ({ images, title }) => {
       <div className="absolute inset-0 bg-black/20 z-10 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none" />
       
       {/* Image */}
-      <img 
-        src={currentImageSrc} 
-        alt={`${title} - View ${currentIndex + 1}`} 
-        className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" 
-      />
+      {/* Images - Stacked for transitions */}
+      {images.map((imgSrc, idx) => (
+        <img 
+          key={idx}
+          src={imgSrc} 
+          alt={`${title} - View ${idx + 1}`} 
+          className={`absolute inset-0 w-full h-full object-contain transition-all duration-700 ease-in-out ${
+            idx === currentIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+          } group-hover:scale-105`} 
+        />
+      ))}
 
       {/* Navigation Controls */}
       {hasMultipleImages && (
