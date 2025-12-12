@@ -2,8 +2,72 @@ import React, { useRef, useState, useMemo } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const ProjectImageCarousel = ({ images, title }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextImage = (e) => {
+    e.stopPropagation(); // Prevent potentially triggering other click events
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = (e) => {
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const hasMultipleImages = images && images.length > 1;
+
+  // If no images or invalid structure, handle gracefully (though data.json should be correct)
+  const currentImageSrc = images && images.length > 0 ? images[currentIndex] : "";
+
+  return (
+    <div className="w-full md:w-3/5 h-[400px] md:h-full relative overflow-hidden group">
+      <div className="absolute inset-0 bg-black/20 z-10 group-hover:opacity-0 transition-opacity duration-500 pointer-events-none" />
+      
+      {/* Image */}
+      <img 
+        src={currentImageSrc} 
+        alt={`${title} - View ${currentIndex + 1}`} 
+        className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" 
+      />
+
+      {/* Navigation Controls */}
+      {hasMultipleImages && (
+        <>
+          <button 
+            onClick={prevImage}
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-20"
+            aria-label="Previous image"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          
+          <button 
+            onClick={nextImage}
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-20"
+            aria-label="Next image"
+          >
+            <ChevronRight size={20} />
+          </button>
+
+          {/* Indicators */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+            {images.map((_, idx) => (
+              <div 
+                key={idx} 
+                className={`w-1.5 h-1.5 rounded-full transition-colors ${idx === currentIndex ? 'bg-white' : 'bg-white/40'}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
 
 const Projects = ({ data }) => {
   const container = useRef();
@@ -32,8 +96,6 @@ const Projects = ({ data }) => {
     const cards = gsap.utils.toArray(".project-card");
     
     cards.forEach((card, i) => {
-
-      
        // Scale down effect for cards
       gsap.to(card, {
         scale: 0.9,
@@ -88,15 +150,8 @@ const Projects = ({ data }) => {
             >
               <div className="h-full flex flex-col md:flex-row">
                 
-                {/* Image Section */}
-                <div className="w-full md:w-3/5 h-[400px] md:h-full relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-black/20 z-10 group-hover:opacity-0 transition-opacity duration-500" />
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                  />
-                </div>
+                {/* Image Section with Carousel */}
+                <ProjectImageCarousel images={project.images} title={project.title} />
 
                 {/* Content Section */}
                 <div className="w-full md:w-2/5 p-8 md:p-12 flex flex-col justify-between">
@@ -118,6 +173,7 @@ const Projects = ({ data }) => {
                     <a 
                       href={project.link}
                       className="inline-flex items-center gap-2 text-white text-sm uppercase tracking-widest group/link hover:text-accent transition-colors"
+                      target="_blank"
                     >
                       <span>View Project</span>
                       <span className="text-lg group-hover/link:translate-x-1 transition-transform">→</span>

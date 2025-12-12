@@ -1,59 +1,87 @@
 {
   "hero": {
     "name": "Varun Satapathy",
-    "roles": ["Web Developer", "Game Developer", "Programmer"],
+    "roles": ["Game Developer", "Web Developer", "Programmer"],
     "bio": "Crafting digital realms where logic meets creativity. I build immersive games and high-performance web applications.",
     "photo": "https://placehold.co/400x400/2a2a2a/ffffff?text=VS"
   },
   "about": {
     "title": "About Me",
-    "description": "Hello! I'm Varun, a multidisciplinary developer who thrives at the intersection of game development and web engineering. With a passion for clean code and compelling user experiences, I bridge the gap between interactive 3D worlds and responsive modern web interfaces. Whether it's optimizing a rendering pipeline or architecting a scalable frontend, I love the challenge of bringing ideas to life."
+    "description": "Hey there! I'm Varun, a fellow with a simple passion. I love to bring an 'immersive experience' through my coding. Every project I make, is made to pull the player into the world of the game by fine tuning what they percieve. I make experiences, solve problems, create solutions, all through coding. Let me know if our interests align!"
   },
   "skills": {
-    "game": ["Unity 3D", "C#", "Unreal Engine", "HLSL/GLSL", "Physics Games"],
-    "web": ["React.js", "JavaScript (ES6+)", "Three.js", "Node.js", "WebGL"],
-    "other": ["Git & Version Control", "Python", "Algorithm Design", "CI/CD Pipelines"]
+    "game (main)": ["Godot 4", "GDScript", "2D Games", "Physics Games", "Game UI Mastery", "State Management"],
+    "web": ["HTML5", "CSS3", "Javascript", "TailwindCSS", "React", "Node.js", "GSAP", "Express", "Flask"],
+    "other": ["Python", "Java", "C", "MySQL", "PostGresSQL", "Git & Version Control", "Algorithm Design"]
   },
   "projects": [
     {
       "id": 1,
-      "title": "Neon Horizon",
+      "title": "Wizard Wander",
       "category": "game",
-      "image": "https://placehold.co/600x400/111/00ffcc?text=Neon+Horizon",
-      "description": "A high-speed cyberpunk racer built in Unity with custom shader effects.",
-      "link": "#"
+      "images": [
+        "./src/assets/wizard_wander_3.png",
+        "./src/assets/wizard_wander_2.png",
+        "./src/assets/wizard_wander_1.png"
+      ],
+      "description": "A 2D infinite runner, where you control a wizard that jumps over obstacles, onto new platforms, and avoids & kills enemies. Made for Android",
+      "link": "https://veyronshark.itch.io/wizard-wander"
     },
     {
       "id": 2,
-      "title": "E-Commerce Dashboard",
-      "category": "web",
-      "image": "https://placehold.co/600x400/111/3399ff?text=Dashboard",
-      "description": "A comprehensive analytics dashboard using React and D3.js.",
-      "link": "#"
+      "title": "Dungeon Duels",
+      "category": "game",
+      "images": [
+        "./src/assets/dungeon_duels_2.png",
+        "./src/assets/dungeon_duels_1.png"
+      ],
+      "description": "A 2D battle game, where you and your friend, play on the same keyboard, to see who is the better fighter! The ultimate fight setter! Made for the Web",
+      "link": "https://veyronshark.itch.io/dungeon-duels"
     },
     {
       "id": 3,
-      "title": "Automation Suite",
-      "category": "other",
-      "image": "https://placehold.co/600x400/111/ff3366?text=Auto+Scripts",
-      "description": "Python scripts for automating daily development workflows.",
-      "link": "#"
+      "title": "Polarity Dash",
+      "category": "game",
+      "images": [
+        "./src/assets/polarity-dash-1.png",
+        "./src/assets/polarity-dash-2.png",
+        "./src/assets/polarity-dash-3.png"
+      ],
+      "description": "A 2D game in which, you control a ball that can switch polarity. Each polarity interacts differently with the environment. Reach the end of the level without dying to win! Made for the Web",
+      "link": "https://veyronshark.itch.io/polarity-dash"
     },
     {
       "id": 4,
-      "title": "Voxel World",
-      "category": "game",
-      "image": "https://placehold.co/600x400/111/ccff00?text=Voxel+World",
-      "description": "A procedural terrain generation experiment utilizing perlin noise.",
-      "link": "#"
+      "title": "SyncSpace",
+      "category": "web",
+      "images": [
+        "./src/assets/syncspace-1.png",
+        "./src/assets/syncspace-2.png",
+        "./src/assets/syncspace-3.png",
+        "./src/assets/syncspace-4.png"
+      ],
+      "description": "A cutting-edge team collaboration platform that seamlessly integrates real-time messaging, HD video conferencing, interactive polls, voice messages, AI-powered assistance, and comprehensive project management tools. Built with modern web technologies and designed for scalability, it empowers teams to communicate, collaborate, and stay productive from anywhere.",
+      "link": "https://syncspace-client.vercel.app/"
     },
     {
       "id": 5,
-      "title": "Modern Portfolio",
+      "title": "LaunchPad",
       "category": "web",
-      "image": "https://placehold.co/600x400/111/ffffff?text=Portfolio",
-      "description": "Minimalist portfolio template with dark mode support.",
-      "link": "#"
+      "images": [
+        "./src/assets/launchpad-1.png",
+        "./src/assets/launchpad-2.png",
+        "./src/assets/launchpad-3.png"
+      ],
+      "description": "A Web project that shows the working of the instrument 'launchpad'. It's mostly a mathematical, lighting simulation by pressing buttons and calculating boxes using matrices.",
+      "link": "https://veyronshark.github.io/launchpad/"
+    },
+    {
+      "id": 6,
+      "title": "Personal Music Player",
+      "category": "web",
+      "images": ["./src/assets/music-player.png"],
+      "description": "A Web-based music player made using my favourite songs of mid-2025! It features all the modern playback controls and a beautiful UI",
+      "link": "https://veyronshark.github.io/music-player/"
     }
   ],
   "socials": [
