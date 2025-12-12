@@ -18,8 +18,6 @@ body {
   background-color: var(--color-background);
   color: var(--color-primary);
   font-family: var(--font-sans);
-
-
 }
 
 /* Custom Scrollbar */

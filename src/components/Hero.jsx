@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import Magnetic from './Magnetic';
 
 const Hero = ({ data }) => {
   const container = useRef();
@@ -11,22 +12,17 @@ const Hero = ({ data }) => {
   useGSAP(() => {
     const tl = gsap.timeline();
     
-    // Animate letters
-    tl.from(".hero-char", {
-      y: 100,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.03,
-      ease: "power4.out",
-      delay: 0.5
-    })
-    .from(".hero-role", {
+    // Animate letters - letters handled in App.jsx for sequence
+    // But we still need to animate other hero parts after a delay to match
+    
+    tl.from(".hero-role", {
       opacity: 0,
       x: -20,
       duration: 0.8,
       stagger: 0.2,
-      ease: "power2.out"
-    }, "-=0.5")
+      ease: "power2.out",
+      delay: 2 // Wait for loader + title
+    })
     .from(".hero-status", {
       scale: 0,
       duration: 0.5,
@@ -70,6 +66,13 @@ const Hero = ({ data }) => {
       </div>
 
 
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 mix-blend-difference z-20">
+        <Magnetic>
+          <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white text-xs uppercase tracking-widest animate-bounce">
+            ↓
+          </div>
+        </Magnetic>
+      </div>
     </section>
   );
 };
