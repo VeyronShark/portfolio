@@ -11,7 +11,7 @@
   --font-sans: 'Space Grotesk', system-ui, sans-serif;
   --font-display: 'Syne', sans-serif;
   
-  --cursor-size: 20px;
+
 }
 
 body {
@@ -19,7 +19,7 @@ body {
   color: var(--color-primary);
   font-family: var(--font-sans);
   overflow-x: hidden;
-  cursor: none; /* Hide default cursor for custom one */
+
 }
 
 /* Custom Scrollbar */

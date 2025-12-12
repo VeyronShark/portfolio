@@ -5,13 +5,11 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import data from './data.json';
 
-import CustomCursor from './components/CustomCursor';
+
 
 function App() {
   return (
     <div className="App min-h-screen bg-background text-primary selection:bg-accent selection:text-white">
-      <CustomCursor />
-      
       {/* Noise Texture */}
       <div className="noise-overlay" />
 
