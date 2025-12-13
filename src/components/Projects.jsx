@@ -128,7 +128,7 @@ const Projects = ({ data }) => {
         </h2>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap gap-4 mb-24">
+        <div className="flex flex-wrap gap-4 mb-12">
             {categories.map((cat) => (
               <Magnetic key={cat}>
                 <button
@@ -152,7 +152,7 @@ const Projects = ({ data }) => {
                 key={project.id} // Use stable ID instead of index
                 className="project-card sticky top-24 min-h-[600px] md:h-[80vh] w-full bg-[#0a0a0a] border border-white/10 rounded-3xl overflow-hidden shadow-2xl origin-top"
                 style={{
-                    top: `calc(100px + ${index * 20}px)`, // Staggered sticky top based on current list index
+                    top: `calc(30px + ${index * 20}px)`, // Staggered sticky top based on current list index
                     zIndex: index + 1
                 }}
               >
@@ -162,8 +162,8 @@ const Projects = ({ data }) => {
                   <ProjectImageCarousel images={project.images} title={project.title} />
 
                   {/* Content Section */}
-                  <div className="w-full md:w-2/5 p-8 md:p-12 flex flex-col justify-between">
-                      <div>
+                  <div className="w-full md:w-2/5 flex flex-col h-full"> 
+                      <div className="flex-1 p-8 md:p-12 overflow-y-auto custom-scrollbar">
                           <div className="flex items-center justify-between mb-8">
                               <span className="text-secondary text-sm uppercase tracking-widest border border-white/10 px-3 py-1 rounded-full">{project.category}</span>
                               <span className="text-secondary/50 font-display text-4xl font-bold">0{index + 1}</span>
@@ -178,14 +178,17 @@ const Projects = ({ data }) => {
                           </p>
                       </div>
 
-                      <a 
-                        href={project.link}
-                        className="inline-flex items-center gap-2 text-white text-sm uppercase tracking-widest group/link hover:text-accent transition-colors"
-                        target="_blank"
-                      >
-                        <span>View Project</span>
-                        <span className="text-lg group-hover/link:translate-x-1 transition-transform">→</span>
-                      </a>
+                      {/* Footer / Button Area */}
+                      <div className="p-8 md:p-12 border-t border-white/10 mt-auto bg-[#0a0a0a]">
+                        <a 
+                          href={project.link}
+                          className="inline-flex items-center gap-2 text-white text-sm uppercase tracking-widest group/link hover:text-accent transition-colors"
+                          target="_blank"
+                        >
+                          <span>View Project</span>
+                          <span className="text-lg group-hover/link:translate-x-1 transition-transform">→</span>
+                        </a>
+                      </div>
                   </div>
                 </div>
               </div>
