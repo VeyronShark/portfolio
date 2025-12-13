@@ -32,8 +32,8 @@
       "title": "Dungeon Duels",
       "category": "game",
       "images": [
-        "./src/assets/dungeon_duels_2.png",
-        "./src/assets/dungeon_duels_1.png"
+        "./assets/dungeon_duels_2.png",
+        "./assets/dungeon_duels_1.png"
       ],
       "description": "A 2D battle game, where you and your friend, play on the same keyboard, to see who is the better fighter! The ultimate fight setter! Made for the Web",
       "link": "https://veyronshark.itch.io/dungeon-duels"
@@ -43,9 +43,9 @@
       "title": "Polarity Dash",
       "category": "game",
       "images": [
-        "./src/assets/polarity-dash-1.png",
-        "./src/assets/polarity-dash-2.png",
-        "./src/assets/polarity-dash-3.png"
+        "./assets/polarity-dash-1.png",
+        "./assets/polarity-dash-2.png",
+        "./assets/polarity-dash-3.png"
       ],
       "description": "A 2D game in which, you control a ball that can switch polarity. Each polarity interacts differently with the environment. Reach the end of the level without dying to win! Made for the Web",
       "link": "https://veyronshark.itch.io/polarity-dash"
@@ -55,10 +55,10 @@
       "title": "SyncSpace",
       "category": "web",
       "images": [
-        "./src/assets/syncspace-1.png",
-        "./src/assets/syncspace-2.png",
-        "./src/assets/syncspace-3.png",
-        "./src/assets/syncspace-4.png"
+        "./assets/syncspace-1.png",
+        "./assets/syncspace-2.png",
+        "./assets/syncspace-3.png",
+        "./assets/syncspace-4.png"
       ],
       "description": "A cutting-edge team collaboration platform that seamlessly integrates real-time messaging, HD video conferencing, interactive polls, voice messages, AI-powered assistance, and comprehensive project management tools. Built with modern web technologies and designed for scalability, it empowers teams to communicate, collaborate, and stay productive from anywhere.",
       "link": "https://syncspace-client.vercel.app/"
@@ -68,9 +68,9 @@
       "title": "LaunchPad",
       "category": "web",
       "images": [
-        "./src/assets/launchpad-1.png",
-        "./src/assets/launchpad-2.png",
-        "./src/assets/launchpad-3.png"
+        "./assets/launchpad-1.png",
+        "./assets/launchpad-2.png",
+        "./assets/launchpad-3.png"
       ],
       "description": "A Web project that shows the working of the instrument 'launchpad'. It's mostly a mathematical, lighting simulation by pressing buttons and calculating boxes using matrices.",
       "link": "https://veyronshark.github.io/launchpad/"
@@ -79,7 +79,7 @@
       "id": 6,
       "title": "Personal Music Player",
       "category": "web",
-      "images": ["./src/assets/music-player.png"],
+      "images": ["./assets/music-player.png"],
       "description": "A Web-based music player made using my favourite songs of mid-2025! It features all the modern playback controls and a beautiful UI",
       "link": "https://veyronshark.github.io/music-player/"
     }
