@@ -20,9 +20,9 @@
       "title": "Wizard Wander",
       "category": "game",
       "images": [
-        "./src/assets/wizard_wander_3.png",
-        "./src/assets/wizard_wander_2.png",
-        "./src/assets/wizard_wander_1.png"
+        "./assets/wizard_wander_3.png",
+        "./assets/wizard_wander_2.png",
+        "./assets/wizard_wander_1.png"
       ],
       "description": "A 2D infinite runner, where you control a wizard that jumps over obstacles, onto new platforms, and avoids & kills enemies. Made for Android",
       "link": "https://veyronshark.itch.io/wizard-wander"
