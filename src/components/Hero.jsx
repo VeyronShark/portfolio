@@ -50,7 +50,9 @@ const Hero = ({ data }) => {
             </div>
           ))}
         </h1>
-
+        <p className="mt-6 text-secondary">
+            Too long? View my resume <a href="/assets/Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-white hover:underline underline-offset-4 decoration-white/30 transition-all font-medium">here</a>
+        </p>
         <div className="flex flex-col md:flex-row gap-8 md:items-end justify-between mt-12 border-t border-white/10 pt-8">
           <div className="flex gap-4 text-sm md:text-base uppercase tracking-widest font-medium">
             {data.roles.map((role, i) => (
