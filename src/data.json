@@ -86,27 +86,15 @@
   ],
   "socials": [
     {
-      "id": "twitter",
-      "label": "Twitter",
-      "link": "https://twitter.com",
-      "icon": "Twitter"
-    },
-    {
-      "id": "linkedin",
-      "label": "LinkedIn",
-      "link": "https://linkedin.com",
-      "icon": "Linkedin"
-    },
-    {
       "id": "github",
       "label": "GitHub",
-      "link": "https://github.com",
+      "link": "https://github.com/VeyronShark",
       "icon": "Github"
     },
     {
       "id": "email",
       "label": "Email",
-      "link": "mailto:hello@example.com",
+      "link": "mailto:varun.satapathy@gmail.com",
       "icon": "Mail"
     }
   ]
